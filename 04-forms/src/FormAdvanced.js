@@ -6,7 +6,8 @@ export default class FormAdvanced extends React.Component {
         'email': "",
         'color': "",
         'favtime': "",
-        'fruits': []
+        'fruits': [],
+        'country': "",
     }
 
     render() {
@@ -36,7 +37,15 @@ export default class FormAdvanced extends React.Component {
                     <label>Favorite Fruits</label>
                     <input type="checkbox" name="fruits" value="apple" onChange={this.updateFruits} checked={this.state.fruits.includes('apple')} />Apple
                     <input type="checkbox" name="fruits" value="orange" onChange={this.updateFruits} checked={this.state.fruits.includes('orange')} />Orange
-                    <input type="checkbox" name="fruits" value="pear" onChange={this.updateFruits}  checked={this.state.fruits.includes('pear')}/>Pear
+                    <input type="checkbox" name="fruits" value="pear" onChange={this.updateFruits} checked={this.state.fruits.includes('pear')} />Pear
+                </div>
+                <div>
+                    <label>Country</label>
+                    <select name="country" onChange={this.updateForm} value={this.state.country}>
+                        <option value="sg">Singapore</option>
+                        <option value="my">Malaysia</option>
+                        <option value="th">Thailand</option>
+                    </select>
                 </div>
             </React.Fragment>
         );
@@ -52,6 +61,7 @@ export default class FormAdvanced extends React.Component {
         } else {
             // if user clicks a checkbox when its value is already in array, we have to remove it
             let copy = this.state.fruits.filter((eachFruit) => {
+                // only keep the fruits that does not match what i want to delete
                 return eachFruit !== event.target.value
             })
             this.setState({
