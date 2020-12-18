@@ -10,7 +10,7 @@ export default class NumberBox extends React.Component {
         return (
             <React.Fragment>
                 <div style={{ "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
-                    <h1>{this.state.number}</h1>
+                    <h1 style={{'backgroundColor': this.state.number%2===0 ? 'red' : 'green'}}>{this.state.number}</h1>
                     <div>
                         <button onClick={this.increment}>Add 1</button>
                         <button onClick={this.decrement}>Minus 1</button>

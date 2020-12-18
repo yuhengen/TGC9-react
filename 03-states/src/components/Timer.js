@@ -20,22 +20,22 @@ export default class Timer extends React.Component {
         )
     }
 
-    start = () => {
-        if (this.state.timeLeft > 0) {
-            setInterval(() => {
-                this.setState({
-                    timeLeft: this.state.timeLeft - 1
-                })
-            }, 1000)
-        } else {
-            clearInterval(this.state.timeLeft)
-        }
-    }
+    // start = () => {
+    //     if (this.state.timeLeft > 0) {
+    //         setInterval(() => {
+    //             this.setState({
+    //                 timeLeft: this.state.timeLeft - 1
+    //             })
+    //         }, 1000)
+    //     } else {
+    //         clearInterval(this.state.timeLeft)
+    //     }
+    // }
 
-    reset = () => {
-        this.setState({
-            timeLeft: this.state.timeLeft = 10
-        })
-    }
+//     reset = () => {
+//         this.setState({
+//             timeLeft: this.state.timeLeft = 10
+//         })
+//     }
 
 }

@@ -11,7 +11,7 @@ export default class ImageBox extends React.Component {
             <React.Fragment>
                 <div style={{ "display": "flex", "flexDirection": "column", "alignItems": "center" }}>
                     <h1>Now showing: Image {this.state.which_image}</h1>
-                    <img src={this.state.images} />
+                    <img src={this.state.images} alt="Hero Icon"/>
                     <button onClick={this.switchImage}>Switch</button>
                 </div>
             </React.Fragment>
@@ -19,7 +19,7 @@ export default class ImageBox extends React.Component {
     }
 
     switchImage = () => {
-        if (this.state.which_image == 1) {
+        if (this.state.which_image === 1) {
             this.setState({
                 images: this.props.image2,
                 which_image: 2
